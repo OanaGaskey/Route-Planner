@@ -6,10 +6,10 @@
  
  Finding the shortest path between two locations is a key task in path planning expecially for self driving cars to navigate from point A to point B.
  
- Given that the map is known, this can be represented under the form of a graph. Cities are seen as nodes and roads are it's edges. For each city the global position is considered known, in terms of latitude and longitude, 
- together with a list of it's neighboring cities.
+ Given that the map is known, this can be represented under the form of a graph. Cities are seen as nodes and roads are its edges. For each city the global position is considered known, in terms of latitude and longitude, 
+ together with a list of its neighboring cities.
  
- The car's current location is node A and it's destination city is node B. Now that the problem has been reduced to a graph representation, the task is limited to a graph search that is best suited for this case.
+ The car's current location is node A and the destination city is node B. Now that the problem has been reduced to a graph representation, the task is limited to a graph search that is best suited for this case.
  
  # Graph Search
  
@@ -22,7 +22,7 @@
  
  Distances between cities can be seen as cost. Finding the shortest path is reduced to minimizing the total cost of the path. The Uniform Cost Search is guaranteed to find the cheapest path from a starting node to the destination.
  
- Best Cost Search algorithm based on [Dijkstra's algorithm] (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm ) applies the cheapest first method, expanding the shortest route from the start in every direction. The nodes are explored in order based on how far they are from the start and keeping track of the total cost. When the destination is found and picked as being the shortest path from the start, we know that we found the shortest route. If all roads would be equal in cost, this search method is basicly the [Breadth First Search] (https://en.wikipedia.org/wiki/Breadth-first_search)
+ Best Cost Search algorithm based on [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm ) applies the cheapest first method, expanding the shortest route from the start in every direction. The nodes are explored in order based on how far they are from the start and keeping track of the total cost. When the destination is found and picked as being the shortest path from the start, we know that we found the shortest route. If all roads would be equal in cost, this search method is basicly the [Breadth First Search](https://en.wikipedia.org/wiki/Breadth-first_search)
  This algorithm works well if there is no concern for efficiency and number of operations. The bigger the map, the more obvious the inefficiency is. Imagine looking for your destination while going in the opposite direction.
   
  - **Best First Search**
@@ -30,7 +30,7 @@
  We want a targeted search that gets us in the direction of the destination. For this we calculate the estimate distance between the start point and the destination. For the map search this is the straight line between nodes A and B.
  [Best First Search](https://en.wikipedia.org/wiki/Best-first_search), or greedy algorithm, always searches for the next node which gets you closest to the destination based on the estimate of the distance. Since it does not keep record of the lowest total cost, it will find the destination but it will not always provide the shortest route, for example if there are obstacles along the way.
  
- - **A* **
+ - ** A\* **
  
  Finding the shortest path while searching in the correct direction is where [A*](https://en.wikipedia.org/wiki/A*_search_algorithm) is the best choice. A* is expanding the route that keeps the sum of total cost and the distance 
  estimation to the goal to a minimum.
