@@ -30,7 +30,7 @@
  We want a targeted search that gets us in the direction of the destination. For this we calculate the estimate distance between the start point and the destination. For the map search this is the straight line between nodes A and B.
  [Best First Search](https://en.wikipedia.org/wiki/Best-first_search), or greedy algorithm, always searches for the next node which gets you closest to the destination based on the estimate of the distance. Since it does not keep record of the lowest total cost, it will find the destination but it will not always provide the shortest route, for example if there are obstacles along the way.
  
- - ** A\* **
+ - **A\***
  
  Finding the shortest path while searching in the correct direction is where [A*](https://en.wikipedia.org/wiki/A*_search_algorithm) is the best choice. A* is expanding the route that keeps the sum of total cost and the distance 
  estimation to the goal to a minimum.
